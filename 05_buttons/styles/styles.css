@@ -1,0 +1,45 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: "Helvetica", Arial, sans-serif;
+  font-size: 52px;
+  line-height: 61px;
+  text-align: center;
+  cursor: pointer;
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  padding: 42px 60px 44px 60px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-size: 250%;
+  background-image: linear-gradient(322.24deg, #6082b6, #d3cefc 50%, #6082b6 75%);
+  -webkit-box-shadow: 0px 0px 20px #d3cefc, 0px 5px 5px -1px #6082b6, inset 4px 4px 8px #d3cefc, inset -4px -4px 8px #6082b6;
+          box-shadow: 0px 0px 20px #d3cefc, 0px 5px 5px -1px #6082b6, inset 4px 4px 8px #d3cefc, inset -4px -4px 8px #6082b6;
+}
+
+button:hover {
+  background-position: right center;
+  -webkit-box-shadow: 0px 5px 50px #6082b6, 0px 10px 10px -4px #d3cefc, inset 4px 4px 8px #d3cefc, inset -4px -4px 8px #6082b6;
+          box-shadow: 0px 5px 50px #6082b6, 0px 10px 10px -4px #d3cefc, inset 4px 4px 8px #d3cefc, inset -4px -4px 8px #6082b6;
+}
+/*# sourceMappingURL=styles.css.map */
