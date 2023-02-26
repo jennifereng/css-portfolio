@@ -1,0 +1,301 @@
+@import url(https://fonts.googleapis.com/css?family=Helvetica:700,300);
+
+$chart-color-1: #dd7684;
+$chart-color-2: #a480cf;
+$key-color-1: #3678e2;
+$key-color-2: #670f52;
+$border-radius: 3px;
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #f5e6e8;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 220px;
+  width: 280px;
+  background: #fff;
+
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
+
+  .header {
+    position: relative;
+    font-size: 0.95em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.025em;
+
+    padding: 0.75em 0.85em;
+
+    height: 40px;
+
+    color: #fff;
+
+    background: $chart-color-1;
+
+    .title {
+      margin-top: 0.25em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .date {
+      font-size: smaller;
+      margin-bottom: 0.25em;
+    }
+
+    .revenue,
+    .value {
+      text-align: right;
+    }
+
+    .revenue {
+      margin-top: 0.25em;
+      font-size: 0.75em;
+    }
+
+    .value {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+  }
+
+  .key {
+    text-align: right;
+    padding: 0.5em;
+
+    span {
+      position: relative;
+
+      font-size: 0.65em;
+
+      color: #333;
+
+      padding: 0 0.5em 0 3em;
+
+      &:before {
+        position: absolute;
+        display: block;
+        top: 0.4em;
+        left: 1em;
+        content: '';
+        height: 0.5em;
+        width: 1.3em;
+        border-radius: $border-radius;
+      }
+    }
+
+    .key {
+      &-1:before {
+        background: $key-color-1;
+      }
+
+      &-2:before {
+        background: $key-color-2;
+      }
+    }
+  }
+
+  .statistic {
+    position: relative;
+    height: 82px;
+    width: 250px;
+
+    .line {
+      position: absolute;
+      height: 0.075em;
+      width: 100%;
+      background: #e3e3e3;
+
+      &-1 {
+        top: 0;
+        left: 1em;
+      }
+
+      &-2 {
+        @extend .line-1;
+        top: 40px;
+      }
+
+      &-3 {
+        @extend .line-1;
+        top: inherit;
+        bottom: 0;
+      }
+    }
+
+    .data {
+      svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      polyline {
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: square;
+      }
+
+      &.data-1 polyline {
+        stroke: $key-color-1;
+      }
+
+      &.data-2 polyline {
+        stroke: $key-color-2;
+      }
+
+      .tooltip {
+        position: absolute;
+        bottom: 1em;
+        left: 50%;
+        transform: translate3d(-50%, 10px, 0);
+        font-weight: 600;
+        font-size: 0.75em;
+        line-height: 1em;
+        color: #fff;
+        padding: 0.5em 0.75em;
+        border-radius: $border-radius;
+        visibility: hidden;
+        opacity: 0;
+        transition: transform 0.4s ease-in-out 0s, opacity 0.4s ease-in-out 0s;
+
+        &:after {
+          position: absolute;
+          display: block;
+          content: '';
+          height: 6px;
+          width: 6px;
+          left: 50%;
+          margin-left: -3px;
+          bottom: -3px;
+          transform: rotate(45deg);
+        }
+      }
+
+      [class^='point-'] {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        border-radius: $border-radius;
+        cursor: pointer;
+        z-index: 10;
+
+        &:hover .tooltip {
+          visibility: visible;
+          opacity: 1;
+          transform: translate3d(-50%, 0, 0);
+        }
+      }
+
+      &.data-1 {
+        [class^='point-'],
+        .tooltip,
+        .tooltip:after {
+          background: $key-color-1;
+        }
+
+        .point-1 {
+          left: 17px;
+          top: 42px;
+        }
+        .point-2 {
+          left: 57px;
+          top: 10px;
+        }
+        .point-3 {
+          left: 96px;
+          top: 20px;
+        }
+        .point-4 {
+          left: 137px;
+          top: 9px;
+        }
+        .point-5 {
+          left: 178px;
+          top: 35px;
+        }
+        .point-6 {
+          left: 218px;
+          top: 44px;
+        }
+        .point-7 {
+          left: 258px;
+          top: 16px;
+        }
+      }
+
+      &.data-2 {
+        [class^='point-'],
+        .tooltip,
+        .tooltip:after {
+          background: $key-color-2;
+        }
+
+        .point-1 {
+          left: 17px;
+          top: 58px;
+        }
+        .point-2 {
+          left: 57px;
+          top: 48px;
+        }
+        .point-3 {
+          left: 97px;
+          top: 61px;
+        }
+        .point-4 {
+          left: 137px;
+          top: 53px;
+        }
+        .point-5 {
+          left: 178px;
+          top: 58px;
+        }
+        .point-6 {
+          left: 218px;
+          top: 70px;
+        }
+        .point-7 {
+          left: 258px;
+          top: 61px;
+        }
+      }
+    }
+  }
+
+  .days {
+    width: 280px;
+    margin: 0 auto;
+
+    .day {
+      display: block;
+      float: left;
+      width: (100% / 7);
+      font-size: 9px;
+      color: #555;
+      line-height: 4em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+  }
+}
