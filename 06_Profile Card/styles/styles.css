@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,500,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  -webkit-box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: linear-gradient(75deg, #f5cac3 30%, #f28482 100%);
+  color: #84a59d;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 300px;
+  width: 320px;
+  background: #fff;
+  -webkit-box-shadow: 10px 10px 0 0 rgba(132, 70, 69, 0.5);
+          box-shadow: 10px 10px 0 0 rgba(132, 70, 69, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profile {
+  float: left;
+  width: 200px;
+  height: 320px;
+  text-align: center;
+}
+
+.profile .image {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  margin: 38px auto 0 auto;
+}
+
+.profile .image .circle-1, .profile .image .circle-2 {
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 76px;
+  height: 76px;
+  top: -3px;
+  left: -3px;
+  border: 1px solid;
+  border-color: #f28482 #f28482 #f28482 transparent;
+  border-radius: 50%;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
+.profile .image .circle-2 {
+  width: 82px;
+  height: 82px;
+  top: -6px;
+  left: -6px;
+  border-color: #84a59d transparent #84a59d #84a59d;
+}
+
+.profile .image img {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.profile .image:hover, .profile .image:focus {
+  cursor: pointer;
+}
+
+.profile .image:hover .circle-1, .profile .image:hover .circle-2, .profile .image:focus .circle-1, .profile .image:focus .circle-2 {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+.profile .image:hover .circle-2, .profile .image:focus .circle-2 {
+  -webkit-transform: rotate(-360deg);
+          transform: rotate(-360deg);
+}
+
+.profile .name {
+  margin-top: 20px;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.profile .job {
+  font-size: 0.8em;
+}
+
+.profile .actions {
+  margin-top: 33px;
+}
+
+.profile .actions .btn {
+  width: 120px;
+  height: 30px;
+  margin: 0 auto 10px auto;
+  background: none;
+  border: 2px solid #84a59d;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #84a59d;
+}
+
+.profile .actions .btn:hover, .profile .actions .btn:focus {
+  background: #84a59d;
+  border-color: #84a59d;
+  color: #fff;
+}
+
+.stats {
+  position: absolute;
+  right: 0;
+  top: -1px;
+}
+
+.stats .box {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 120px;
+  height: 100px;
+  background: #d8e2dc;
+  padding-top: 30px;
+  text-align: center;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.stats .box:hover, .stats .box:focus {
+  background: #84a59d;
+  color: #fff;
+  cursor: pointer;
+}
+
+.stats .box:nth-child(2) {
+  margin: 1px 0;
+}
+
+.stats span {
+  display: block;
+}
+
+.stats .value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.stats .parameter {
+  font-size: 0.75em;
+  font-weight: 500;
+}
+/*# sourceMappingURL=styles.css.map */
